@@ -1,0 +1,13 @@
+name: 'Say Hello Composite'
+description: 'Echoes a hello message'
+inputs:
+  who:
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+runs:
+  using: 'composite'
+  steps:
+    - run: echo "👋 Hello ${{ inputs.who }}"
+      shell: bash
+
