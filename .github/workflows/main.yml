@@ -1,0 +1,17 @@
+name: Custom Action Demo
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Custom Action (same repo)
+        uses: ./.github/actions/say-hello
+        with:
+          who: 'Neha'
